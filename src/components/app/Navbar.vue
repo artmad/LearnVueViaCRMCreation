@@ -49,6 +49,7 @@ export default {
     this.interval = setInterval(() => {
       this.date = new Date();
     }, 1000);
+
     this.dropdown = window.M.Dropdown.init(this.$refs.dropdown, {});
   },
   beforeDestroy() {
@@ -58,9 +59,9 @@ export default {
     }
   },
   methods: {
-    logout() {
-      console.log("logout");
-      this.$router.push("/login?message=logout");
+    async logout() {
+      this.$store.dispatch("logout");
+      await this.$router.push("/login?message=logout");
     }
   }
 };

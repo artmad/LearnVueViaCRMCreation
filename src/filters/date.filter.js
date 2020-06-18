@@ -1,4 +1,4 @@
-export default function dateFilter(value, format = 'date') {
+ export default function dateFilter(value, format = 'date') {
     var options = {};
 
     if (format.includes('date')) {
@@ -12,8 +12,6 @@ export default function dateFilter(value, format = 'date') {
         options.minute = '2-digit';
         options.second = '2-digit';
     }
-
-    console.log(options);
 
     return new Intl.DateTimeFormat('ru-RU', options).format(value);
 }
